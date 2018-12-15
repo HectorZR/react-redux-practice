@@ -12,4 +12,8 @@ export default function configureStore() {
  * dispatch ejecuta un reducer
  * subscribe que se ejecuta cada vez que se manda un reducer
  * 
+<<<<<<< Updated upstream
  */
+=======
+ */
+>>>>>>> Stashed changes
