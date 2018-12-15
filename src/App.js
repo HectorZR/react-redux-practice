@@ -3,26 +3,32 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
   render() {
+    const { counter, increment, decrement } = this.props;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <button onClick={increment} >Increment</button>
+        <button onClick={decrement} >Decrement</button>
+        <p>{ counter }</p>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  counter: state.counter.count
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: () => {
+      dispatch(increment());
+    },
+    decrement: () => {
+      dispatch(decrement());
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
