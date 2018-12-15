@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { increment, decrement } from "./actions/counterAction";
+import { connect } from 'react-redux';
 
 class App extends Component {
 
